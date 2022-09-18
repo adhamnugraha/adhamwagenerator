@@ -20,7 +20,7 @@
     <!-- my css -->
     <link href="style.css" rel="stylesheet" />
 
-    <title>Web Portofolio | Adham</title>
+    <title>Adham | Web Portofolio</title>
     <link rel="shortcut icon" href="img/ANICONB.png" type="image/x-icon" />
   </head>
   <body>
@@ -42,6 +42,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.php">BACK</a>
             </li>
           </ul>
         </div>
@@ -107,7 +110,7 @@
         <div class="row text-center">
           <div class="col-md-4">
             <div class="card" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
-              <img src="img/project/WEB-PEMINJAMAN.jpg" class="card-img-top" alt="web-inventaris" />
+              <img src="img/project/WEB-PEMINJAMAN.jpg" id="imgproject" class="card-img-top" alt="web-inventaris" />
 
               <div class="card-body">
                 <p class="card-text">Website Inventory</p>
@@ -116,7 +119,7 @@
           </div>
           <div class="col-md-4">
             <div class="card" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="100">
-              <img src="img/project/02desain-banner-kq.jpg" class="card-img-top" alt="banner-kq" />
+              <img src="img/project/02desain-banner-kq.jpg" id="imgproject" class="card-img-top" alt="banner-kq" />
               <div class="card-body">
                 <p class="card-text">Desain Banner Program UMKM</p>
               </div>
@@ -124,7 +127,7 @@
           </div>
           <div class="col-md-4">
             <div class="card" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="200">
-              <img src="img/project/logo-iwarga-fix.png" class="card-img-top" alt="iwarga" />
+              <img src="img/project/logo-iwarga-fix.png" id="imgproject" class="card-img-top" alt="iwarga" />
               <div class="card-body">
                 <p class="card-text">Desain Logo I Warga</p>
               </div>
@@ -134,7 +137,7 @@
         <div class="row justify-content-center text-center">
           <div class="col-md-4">
             <div class="card" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="300">
-              <img src="img/project/01project-tarkam.jpg" class="card-img-top" alt="tarkam" />
+              <img src="img/project/01project-tarkam.jpg" id="imgproject" class="card-img-top" alt="tarkam" />
               <div class="card-body">
                 <p class="card-text">Aplikasi Dekstop Tarkam</p>
               </div>
@@ -142,7 +145,7 @@
           </div>
           <div class="col-md-4">
             <div class="card" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="400">
-              <img src="img/project/logosoregasimerah.png" class="card-img-top" alt="" style="width: 100%" />
+              <img src="img/project/logosoregasimerah.png" id="imgproject" class="card-img-top" alt="" style="width: 100%" />
               <div class="card-body">
                 <p class="card-text">Desain Logo Soregasi Coffee</p>
               </div>
@@ -150,7 +153,7 @@
           </div>
           <div class="col-md-4">
             <div class="card" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="400">
-              <img src="img/project/03-ui-adroid-op.jpg" class="card-img-top" alt="lightroom" />
+              <img src="img/project/03-ui-adroid-op.jpg" class="pop" data-target="#modal" />
               <div class="card-body">
                 <p class="card-text">Desain UI</p>
               </div>
@@ -218,13 +221,41 @@
     <!-- footer -->
     <footer class="text-center text-white pb-3">
       <p>&copy 2021 | Created With <i class="bi bi-heart-fill text-danger"></i> By <a href="https://www.instagram.com/adhamnugraha12/" class="text-white fw-bold"> Adham Nugraha</a></p>
+      <p>
+        <i class="sosmed">
+          <a href="https://www.instagram.com/adhamngrha"><img src="img/project/Instagram_icon.png" style="width: 25px; height: 25px" /></a
+        ></i>
+        <i class="sosmed text-white">
+          <a href="https://www.linkedin.com/in/adhamnugraha/"><img class="text-white" src="img/project/linkedin.png" style="width: 25px; height: 25px" /></a
+        ></i>
+      </p>
     </footer>
+
+    <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <img src="" class="imagepreview" style="width: 100%" />
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- akhir footer -->
 
     <!-- script bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script type="text/javascript">
+      $(function () {
+        $(".pop").on("click", function () {
+          $(".imagepreview").attr("src", $(this).find("img").attr("src"));
+          $("#imagemodal").modal("show");
+        });
+      });
+    </script>
 
     <script>
       AOS.init({
